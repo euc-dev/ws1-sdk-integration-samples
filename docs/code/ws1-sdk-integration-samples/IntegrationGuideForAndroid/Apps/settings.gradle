@@ -1,0 +1,38 @@
+// Copyright 2023 VMware, Inc.
+// SPDX-License-Identifier: BSD-2-Clause
+
+include (
+    ':baseJava', ':baseKotlin',
+
+    ':clientJava', ':clientKotlin',
+
+    ':frameworkDelegateJava', ':frameworkDelegateKotlin',
+    ':frameworkExtendJava',   ':frameworkExtendKotlin',
+
+    ':brandStaticDelegateJava', ':brandStaticDelegateKotlin',
+    ':brandStaticExtendJava',   ':brandStaticExtendKotlin',
+
+    ':brandEnterpriseOnlyDelegateJava', ':brandEnterpriseOnlyDelegateKotlin',
+    ':brandEnterpriseOnlyExtendJava',   ':brandEnterpriseOnlyExtendKotlin',
+
+    ':brandEnterprisePriorityDelegateJava',
+    ':brandEnterprisePriorityDelegateKotlin',
+    ':brandEnterprisePriorityExtendJava',
+    ':brandEnterprisePriorityExtendKotlin',
+
+    ':brandDynamicDelegateJava', ':brandDynamicDelegateKotlin',
+    ':brandDynamicExtendJava',   ':brandDynamicExtendKotlin',
+
+    ':privacyKotlin',
+
+    ':dlpExtendKotlin',
+    
+    ':identificationDemo',
+    
+    ':tunnel',
+    ':integratedAuth',
+    ':trafficAuthentication',
+    ':logger'
+)
+
+rootProject.name='Integration Guide'

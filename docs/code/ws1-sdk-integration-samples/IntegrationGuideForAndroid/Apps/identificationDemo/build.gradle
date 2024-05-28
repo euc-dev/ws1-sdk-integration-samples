@@ -1,0 +1,111 @@
+// Copyright 2023 VMware, Inc.
+// SPDX-License-Identifier: BSD-2-Clause
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.vmware.workspaceone_example_identification"
+        minSdk 21
+        targetSdk 33
+        versionCode 2
+        versionName "1.1"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile(
+                'proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    testOptions {
+        animationsDisabled = true
+    }
+}
+
+// The signing configuration, which is secret and must be created by each user
+// of the repository. For a template, see the readme file in this directory:  
+// `workspace-one-sdk-integration-samples/IntegrationGuideForAndroid/Secret`
+apply from: secretFile("keystore.gradle")
+
+dependencies {
+    // AndroidX native.
+    def appcompat_version = "1.3.1"
+    def constraintLayout_version = "2.1.0"
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    // Following is added by default but is commented out for now.
+    // implementation 'androidx.core:core-ktx:1.2.0'
+
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    // For loading and tinting drawables on older versions of the platform
+    implementation "androidx.appcompat:appcompat-resources:$appcompat_version"
+
+    implementation(
+        "androidx.constraintlayout:constraintlayout:$constraintLayout_version")
+
+    // Libraries for running automated tests.
+    androidTestImplementation 'androidx.test:core:1.4.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test:runner:1.4.0'
+    androidTestImplementation 'androidx.test:rules:1.4.0'
+}
+
+// Workspace ONE integration additions start here.
+
+android {
+    defaultConfig {
+        multiDexEnabled true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    packagingOptions {
+        exclude 'META-INF/kotlinx-serialization-runtime.kotlin_module'
+    }
+}
+
+repositories {
+    maven {
+        url 'https://vmwaresaas.jfrog.io/artifactory/Workspace-ONE-Android-SDK/'
+    }
+}
+
+dependencies {
+    // Integrate Workspace ONE at the Client level.
+    //
+    // Before downloading, installing, or using the VMware Workspace ONE SDK you
+    // must:
+    //
+    // -   Review the VMware Workspace ONE Software Development Kit License
+    //     Agreement that is posted here.
+    //     https://developer.vmware.com/docs/12215/WorkspaceONE_SDKLicenseAgreement.pdf
+    //
+    //     By downloading, installing, or using the VMware Workspace ONE SDK you
+    //     agree to these license terms. If you disagree with any of the terms,
+    //     then do not use the software.
+    //
+    // -   Review the VMware Privacy Notice and the Workspace ONE UEM Privacy
+    //     Disclosure for information on applicable privacy policies.
+    //     https://www.vmware.com/help/privacy.html
+    //     https://www.vmware.com/help/privacy/uem-privacy-disclosure.html
+    implementation ("com.airwatch.android:AirWatchSDK:${airwatchVersion}")
+}
+
+// Test task in a separate file.
+apply from: 'test-no-app-uninstall.gradle'

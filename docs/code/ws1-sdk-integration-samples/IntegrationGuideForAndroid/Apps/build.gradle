@@ -1,0 +1,76 @@
+// Copyright 2023 VMware, Inc.
+// SPDX-License-Identifier: BSD-2-Clause
+
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.7.21'
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.2.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+task printUserHomeDir {
+    doLast {
+        // "The Gradle user home directory. This directory is used to cache
+        // downloaded resources, compiled build scripts and so on."
+        // https://docs.gradle.org/current/dsl/org.gradle.api.invocation.Gradle.html#org.gradle.api.invocation.Gradle:gradleUserHomeDir
+        println project.gradle.gradleUserHomeDir
+    }
+}
+
+ext {
+    airwatchVersion = '24.01'
+    privacyVersion = '21.5.1'
+
+    // Utility method to generate a path for a file in the directory for
+    // secrets. Secrets are stored outside the Android Studio project, hence
+    // `rootDir.getParent()`.
+    secretFile = {
+        String[] segments -> new RelativePath(true, "Secret", *segments)
+            .getFile(new File(rootDir.getParent()))
+    }
+
+    secretProperties = { String[] segments ->
+        def path = secretFile(*segments)
+        if (!path.exists()) {
+            return null
+        }
+
+        // TOTH: https://stackoverflow.com/a/37101792/7657675
+        def properties = new Properties()
+        file(path).withInputStream {properties.load(it)}
+        return properties
+    }
+
+    // Utility methods to generate paths for files or directories under where
+    // the current selected version of the SDK was downloaded.
+    sdkVersionPath = {
+        boolean endsWithFile, String[] segments -> new RelativePath(
+            endsWithFile,
+            "Download", "Android SDK v${airwatchVersion}", *segments
+        ).getFile(new File(rootDir.getParent()))
+    }
+    sdkVersionFile = { String[] segments -> sdkVersionPath(true, segments) }
+    sdkVersionDir = { String[] segments -> sdkVersionPath(false, segments) }
+}

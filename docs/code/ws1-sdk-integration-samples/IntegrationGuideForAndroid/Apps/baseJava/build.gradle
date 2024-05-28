@@ -1,0 +1,9 @@
+// Copyright 2023 VMware, Inc.
+// SPDX-License-Identifier: BSD-2-Clause
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+apply from: file("buildBase.gradle")
