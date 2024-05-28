@@ -23,27 +23,4 @@ integration and usage.
 See:
 [Workspace ONE for iOS Integration Guide Code](IntegrationGuideForiOS)
 
-# Contributing
-The Workspace ONE SDK integration samples project team welcomes contributions
-from the community. Before you start working with the Workspace ONE SDK
-integration samples, please read our
-[Developer Certificate of Origin](https://cla.vmware.com/dco). All contributions
-to this repository must be signed as described on that page. Your signature
-certifies that you wrote the patch or have the right to pass it on as an
-open-source patch. For more detailed information, refer to
-[CONTRIBUTING.md](CONTRIBUTING.md).
 
-# Legal
--   **VMware, Inc.** 3401 Hillview Avenue Palo Alto CA 94304 USA
-    Tel 877-486-9273 Fax 650-427-5001 www.vmware.com
--   Copyright © 2021 VMware, Inc. All rights reserved.
--   This content is protected by U.S. and international copyright and
-    intellectual property laws. VMware products are covered by one
-    or more patents listed at
-    [https://www.vmware.com/go/patents](https://www.vmware.com/go/patents).
-    VMware is a registered trademark or trademark of VMware, Inc. and its
-    subsidiaries in the United States and other jurisdictions. All other marks
-    and names mentioned herein may be trademarks of their respective companies.
--   The Workspace ONE Software Development Kit Integration Samples are
-    licensed under a two-clause BSD license.  
-    SPDX-License-Identifier: BSD-2-Clause
