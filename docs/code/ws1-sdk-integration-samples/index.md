@@ -2,6 +2,9 @@
 layout: page
 title: WS1 SDK Integration Samples
 permalink: /dev-centre/ws1-sdk-integration-samples/
+hide:
+  #- navigation
+  - toc
 ---
 
 # Workspace ONE Software Development Kit Integration Samples
