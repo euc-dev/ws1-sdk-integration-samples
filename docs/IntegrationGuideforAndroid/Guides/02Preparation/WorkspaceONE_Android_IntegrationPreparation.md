@@ -19,7 +19,7 @@ This document is part of the Workspace ONE Integration Guide for Android set. An
 overview that includes links to all the guides is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [https://github.com/vmware-samples/...IntegrationOverview.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
+    [https://github.com/vmware-samples/...IntegrationOverview.md]({{ config.repo_url}}/blob/main/IntegrationGuideForAndroid/Guides/01Overview/WorkspaceONE_Android_IntegrationOverview.md)
 
 -   in Portable Document Format (PDF), on the VMware website:  
     [https://developer.vmware.com/...IntegrationOverview.pdf](https://developer.vmware.com/docs/12354/WorkspaceONE_Android_IntegrationOverview.pdf)
@@ -254,7 +254,7 @@ See the Base Integration guide for instructions. The Base Integration Guide is
 available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [https://github.com/vmware-samples/...BaseIntegration.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/03BaseIntegration/WorkspaceONE_Android_BaseIntegration.md)
+    [https://github.com/vmware-samples/...BaseIntegration.md]({{ config.repo_url}}/blob/main/IntegrationGuideForAndroid/Guides/03BaseIntegration/WorkspaceONE_Android_BaseIntegration.md)
 
 -   in Portable Document Format (PDF), on the VMware website:  
     [https://developer.vmware.com/...BaseIntegration.pdf](https://developer.vmware.com/docs/12356/WorkspaceONE_Android_BaseIntegration.pdf)
@@ -704,7 +704,7 @@ This completes the additional preparation.
 This document is available
 
 -   in Markdown format, in the repository that also holds the sample code:  
-    [https://github.com/vmware-samples/...IntegrationPreparation.md](https://github.com/vmware-samples/workspace-ONE-SDK-integration-samples/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md)
+    [https://github.com/vmware-samples/...IntegrationPreparation.md]({{ config.repo_url}}/blob/main/IntegrationGuideForAndroid/Guides/02Preparation/WorkspaceONE_Android_IntegrationPreparation.md)
 
 -   in Portable Document Format (PDF), on the VMware website:  
     [https://developer.vmware.com/...IntegrationPreparation.pdf](https://developer.vmware.com/docs/12355/WorkspaceONE_Android_IntegrationPreparation.pdf)

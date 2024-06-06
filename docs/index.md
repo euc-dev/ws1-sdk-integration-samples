@@ -1,13 +1,12 @@
 ---
 layout: page
-title: WS1 SDK Integration Samples
-permalink: /dev-centre/ws1-sdk-integration-samples/
+title: Workspace ONE Software Development Kit Integration Samples
+#permalink: /dev-centre/ws1-sdk-integration-samples/
 hide:
   #- navigation
   - toc
 ---
 
-# Workspace ONE Software Development Kit Integration Samples
 This repository contains sample code for integration of mobile applications with the VMware Workspace ONE® platform.
 
 Different sets of sample code will be published to this repository. At time of writing, the following set is available.
@@ -29,4 +28,3 @@ Use this document to install the VMware Workspace One SDK Plugin for React-Nativ
 
 ## [Workspace ONE SDK for Xamarin Forms](IntegrationGuideForXamarinForms/README.md)
 Use this documentation to install the Workspace ONE SDK for Xamarin Forms. The plugin helps enterprise app developers add enterprise- grade security, conditional access, and compliance capabilities to mobile applications.
-
