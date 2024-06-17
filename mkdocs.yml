@@ -1,6 +1,6 @@
 # Project Information
 site_name: samples/ws1-sdk-integration-samples
-site_url: https://euc-dev.github.io/ws1-sdk-integration-samples/
+site_url: https://euc-dev.github.io/samples/ws1-sdk-integration-samples/
 site_author: Phil Helmling
 site_description: POC for developer.omnissa.com
 docs_dir: docs
